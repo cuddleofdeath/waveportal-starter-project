@@ -1,29 +1,47 @@
-import * as React from "react";
-import { ethers } from "ethers";
+import * as React from 'react';
+import { ethers } from 'ethers';
 import './App.css';
 
 export default function App() {
+	const wave = () => {};
 
-  const wave = () => {
-    
-  }
-  
-  return (
-    <div className="mainContainer">
+	const TUlist1 = ['👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿'];
+	const TUlist2 = ['👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿'];
+	const TDlist1 = ['👎', '👎🏻', '👎🏼', '👎🏼', '👎🏽', '👎🏿'];
+	const TDlist2 = ['👎', '👎🏻', '👎🏼', '👎🏼', '👎🏽', '👎🏿'];
+	const thumbsUpEmoji = TUlist1[Math.floor(Math.random() * TUlist1.length)];
+	const thumbsUpEmoji2 = TUlist2[Math.floor(Math.random() * TUlist2.length)];
 
-      <div className="dataContainer">
-        <div className="header">
-        👋 Hey there!
-        </div>
+	const thumbsDownEmoji = TDlist1[Math.floor(Math.random() * TDlist1.length)];
+	const thumbsDownEmoji2 = TDlist2[Math.floor(Math.random() * TDlist2.length)];
 
-        <div className="bio">
-        I am farza and I worked on self-driving cars so that's pretty cool right? Connect your Ethereum wallet and wave at me!
-        </div>
+	return (
+		<div className='mainContainer'>
+			<div className='dataContainer'>
+				<div className='header'>
+					<span role='img' aria-label='chain emoji'>
+						⛓
+					</span>{' '}
+					Ups and Downs Rating Hub{' '}
+					<span role='img' aria-label='chain emoji'>
+						⛓
+					</span>
+				</div>
 
-        <button className="waveButton" onClick={wave}>
-          Wave at Me
-        </button>
-      </div>
-    </div>
-  );
+				<div className='bio'>
+					How do you feel about cats?{' '}
+					<span role='img' aria-label='cat emoji'>
+						🐱
+					</span>
+				</div>
+
+				<button className='waveButton' onClick={wave}>
+					{thumbsUpEmoji} I like them (thumbs up)! {thumbsUpEmoji2}
+				</button>
+				<button className='waveButton' onClick={wave}>
+					{thumbsDownEmoji} I don't like them (thumbs down)! {thumbsDownEmoji2}
+				</button>
+			</div>
+		</div>
+	);
 }
